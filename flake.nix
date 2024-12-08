@@ -26,38 +26,48 @@
             # Basic build system for ROS
             pkgs.colcon
             
+            # Local packages:
+            (pkgs.callPackage ./pkgs/gepetto-viewer-corba/packages.nix {})
+            (pkgs.callPackage ./pkgs/hpp-constraints/packages.nix {})
+            (pkgs.callPackage ./pkgs/hpp-core/packages.nix {})
+            (pkgs.callPackage ./pkgs/hpp-manipulation/packages.nix {})
+            (pkgs.callPackage ./pkgs/hpp-manipulation-urdf/packages.nix {})
+            (pkgs.callPackage ./pkgs/hpp-pinocchio/packages.nix {})
+            (pkgs.callPackage ./pkgs/hpp-statistics/packages.nix {})
+            (pkgs.callPackage ./pkgs/hpp-template-corba/packages.nix {})
             (pkgs.callPackage ./pkgs/colmpc/packages.nix {})
 
-            # Python packages:
-            (pkgs.python3.withPackages(p: [
-              # Development tools
-              p.ipython
-              # Gepetto/Inria packages.
-              p.crocoddyl
-              # p.mim_solvers
-              p.proxsuite
-            ]))
+
+            # # Python packages:
+            # (pkgs.python3.withPackages(p: [
+            #   # Development tools
+            #   p.ipython
+            #   # Gepetto/Inria packages.
+            #   p.crocoddyl
+            #   # p.mim_solvers
+            #   p.proxsuite
+            # ]))
             
-            # Gepetto packages from fork
-            (geppkgs.python3.withPackages(p: [
-              p.hpp-tutorial
-              p.hpp-corbaserver
-              p.hpp-environments
-              p.hpp-gepetto-viewer
-              p.hpp-manipulation-corba
-              p.hpp-universal-robot
-            ]))
-            # geppkgs.hpp-bin-picking
-            geppkgs.gepetto-viewer-corba
-            geppkgs.hpp-constraints
-            geppkgs.hpp-core
-            geppkgs.hpp-manipulation
-            geppkgs.hpp-manipulation-urdf
-            geppkgs.hpp-pinocchio
-            geppkgs.hpp-statistics
-            geppkgs.hpp-template-corba
-            # geppkgs.hpp-tools
-            geppkgs.hpp-util
+            # # Gepetto packages from fork
+            # (geppkgs.python3.withPackages(p: [
+            #   p.hpp-tutorial
+            #   p.hpp-corbaserver
+            #   p.hpp-environments
+            #   p.hpp-gepetto-viewer
+            #   p.hpp-manipulation-corba
+            #   p.hpp-universal-robot
+            # ]))
+            # # geppkgs.hpp-bin-picking
+            # geppkgs.gepetto-viewer-corba
+            # geppkgs.hpp-constraints
+            # geppkgs.hpp-core
+            # geppkgs.hpp-manipulation
+            # geppkgs.hpp-manipulation-urdf
+            # geppkgs.hpp-pinocchio
+            # geppkgs.hpp-statistics
+            # geppkgs.hpp-template-corba
+            # # geppkgs.hpp-tools
+            # geppkgs.hpp-util
 
             # ROS packages
             (with pkgs.rosPackages.humble; buildEnv {
