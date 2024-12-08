@@ -18,16 +18,16 @@
       in {
         devShells.default = pkgs.mkShell {
           name = "AGIMUS humble";
-          buildInputs = [
-            (pkgs.callPackage ./packages_to_nixify/colmpc/package.nix {
-              geppkgs.hpp-constraints
-            })
-          #   (pkgs.callPackage ./packages_to_nixify/mim_robots/flake.nix {})
-          ];
+          # buildInputs = [
+          #   # (pkgs.callPackage ./pkgs/colmpc/default.nix {})
+          #   (pkgs.callPackage ./pkgs/colmpc/default.nix {})
+          # ];
           packages = [
             # Basic build system for ROS
             pkgs.colcon
             
+            (pkgs.callPackage ./pkgs/colmpc/packages.nix {})
+
             # Python packages:
             (pkgs.python3.withPackages(p: [
               # Development tools
