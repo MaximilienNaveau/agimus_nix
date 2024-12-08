@@ -27,15 +27,15 @@
             pkgs.colcon
             
             # Local packages:
-            (pkgs.callPackage ./pkgs/gepetto-viewer-corba/packages.nix {})
-            (pkgs.callPackage ./pkgs/hpp-constraints/packages.nix {})
-            (pkgs.callPackage ./pkgs/hpp-core/packages.nix {})
-            (pkgs.callPackage ./pkgs/hpp-manipulation/packages.nix {})
-            (pkgs.callPackage ./pkgs/hpp-manipulation-urdf/packages.nix {})
-            (pkgs.callPackage ./pkgs/hpp-pinocchio/packages.nix {})
-            (pkgs.callPackage ./pkgs/hpp-statistics/packages.nix {})
-            (pkgs.callPackage ./pkgs/hpp-template-corba/packages.nix {})
-            (pkgs.callPackage ./pkgs/colmpc/packages.nix {})
+            (pkgs.callPackage ./pkgs/gepetto-viewer-corba/package.nix {})
+            (pkgs.callPackage ./pkgs/hpp-constraints/package.nix {})
+            (pkgs.callPackage ./pkgs/hpp-core/package.nix {})
+            (pkgs.callPackage ./pkgs/hpp-manipulation/package.nix {})
+            (pkgs.callPackage ./pkgs/hpp-manipulation-urdf/package.nix {})
+            (pkgs.callPackage ./pkgs/hpp-pinocchio/package.nix {})
+            (pkgs.callPackage ./pkgs/hpp-statistics/package.nix {})
+            (pkgs.callPackage ./pkgs/hpp-template-corba/package.nix {})
+            (pkgs.callPackage ./pkgs/colmpc/package.nix {})
 
 
             # # Python packages:
