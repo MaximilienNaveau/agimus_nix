@@ -18,22 +18,6 @@
         "type": "github"
       }
     },
-    "gepettopkgs": {
-      "locked": {
-        "lastModified": 1728311915,
-        "narHash": "sha256-sSO62Urk2Z+FD0nZedCtls1DS2i1ptym4cH9LLe9qDc=",
-        "owner": "Gepetto",
-        "repo": "nixpkgs",
-        "rev": "cd927e59d87f819ddad09b157d8c58dc7319eba5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Gepetto",
-        "ref": "hpp",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nix-ros-overlay": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -70,14 +54,29 @@
         "type": "github"
       }
     },
+    "original-nixpkgs": {
+      "locked": {
+        "lastModified": 1733669901,
+        "narHash": "sha256-K9KU0SfANd39MoMdWCyoYUMD/NjNRVKCZalDxuIFHsM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "63169766000e55c8b3b8391fa61f446b5b52a786",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "gepettopkgs": "gepettopkgs",
         "nix-ros-overlay": "nix-ros-overlay",
         "nixpkgs": [
           "nix-ros-overlay",
           "nixpkgs"
-        ]
+        ],
+        "original-nixpkgs": "original-nixpkgs"
       }
     },
     "systems": {
